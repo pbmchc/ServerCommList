@@ -16,6 +16,7 @@ import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 
+import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.ItemClick;
 
 import org.androidannotations.annotations.NonConfigurationInstance;
@@ -30,6 +31,7 @@ import pl.edu.ug.aib.firstApp.adapter.PersonListAdapter;
 
 import pl.edu.ug.aib.firstApp.data.Person;
 import pl.edu.ug.aib.firstApp.data.PhoneBook;
+import pl.edu.ug.aib.firstApp.data.User;
 
 @EActivity(R.layout.activity_my)
 
@@ -37,6 +39,10 @@ import pl.edu.ug.aib.firstApp.data.PhoneBook;
 
 public class FirstActivity extends ActionBarActivity {
 
+
+    @Extra
+
+    User user;
 
     @ViewById
 
