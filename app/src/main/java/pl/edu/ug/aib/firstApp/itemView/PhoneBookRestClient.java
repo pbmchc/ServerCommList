@@ -9,6 +9,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 
 import pl.edu.ug.aib.firstApp.data.EmailAndPassword;
 import pl.edu.ug.aib.firstApp.data.PhoneBook;
+import pl.edu.ug.aib.firstApp.data.Picture;
 import pl.edu.ug.aib.firstApp.data.User;
 
 /**
@@ -21,5 +22,7 @@ public interface PhoneBookRestClient extends RestClientHeaders {
     PhoneBook getPhoneBook();
     @Post("/user/session")
     User login(EmailAndPassword emailAndPassword);
+    @Get("/db/pictures/{id}")
+    Picture getPictureById(int id);
 
 }

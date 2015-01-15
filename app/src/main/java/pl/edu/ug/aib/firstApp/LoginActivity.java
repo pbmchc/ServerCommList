@@ -33,6 +33,10 @@ import pl.edu.ug.aib.firstApp.itemView.RestLoginBackgroundTask;
 
 public class LoginActivity extends ActionBarActivity {
 
+    @Bean
+    @NonConfigurationInstance
+    RestLoginBackgroundTask restLoginBackgroundTask;
+
     @ViewById
 
     EditText email;
@@ -60,6 +64,10 @@ public class LoginActivity extends ActionBarActivity {
     void loginClicked()    {
 
         ringProgressDialog.show();
+        EmailAndPassword emailAndPassword = new EmailAndPassword();
+        emailAndPassword.email = email.getText().toString(); //"example@example.com";
+        emailAndPassword.password = password.getText().toString(); //"test00";
+        restLoginBackgroundTask.login(emailAndPassword);
 
 
     }
@@ -67,8 +75,6 @@ public class LoginActivity extends ActionBarActivity {
     public void loginSuccess(User user) {
 
         ringProgressDialog.dismiss();
-
-        Toast.makeText(this, user.sessionId, Toast.LENGTH_LONG).show();
 
         FirstActivity_.intent(this).user(user).start();
 

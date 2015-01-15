@@ -37,7 +37,7 @@ public class RestLoginBackgroundTask {
     }
 
     @Background
-    void login(EmailAndPassword emailAndPassword) {
+    public void login(EmailAndPassword emailAndPassword) {
 
         try {
 

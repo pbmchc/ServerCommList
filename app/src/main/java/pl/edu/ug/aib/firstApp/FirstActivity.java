@@ -2,6 +2,7 @@ package pl.edu.ug.aib.firstApp;
 
 import android.app.ProgressDialog;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 
 import android.widget.Button;
@@ -71,6 +72,7 @@ public class FirstActivity extends ActionBarActivity {
         ringProgressDialog.setMessage("Loading...");
 
         ringProgressDialog.setIndeterminate(true);
+
 
     }
 
